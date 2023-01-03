@@ -1,47 +1,43 @@
 .box {
-  width: 500px;
-  margin: 100px auto;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: fit-content;
+  margin: 150px auto;
+  padding: 30px;
+  background-color: rgb(93, 91, 89);
 }
 
-#logo {
-  width: 300px;
-  height: 100px;
+#text {
+  background-color: black;
+  color: white;
+  height: 80px;
+  width: 400px;
+}
+
+#btn {
   margin: 20px;
-}
-
-#search {
-  width: 550px;
-  height: 35px;
-  border: 1px solid #cecbcb;
-  border-radius: 50px;
-  margin-bottom: 28px;
-}
-
-.btn {
-  margin : 5px;
-  color: black;
-  padding: 5px 12px 5px 12px;
-  background-color: #f8f9fa;
-  border: 1px solid #f8f9fa;
-  border-radius: 5px;
+  width: 110px;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  border: 1px solid white;
+  background-color: rgb(76, 178, 240);
+  border-radius: 10px;
   cursor: pointer;
+
+}
+#btn:hover{
+  background-color: rgb(54, 223, 105);
 }
 
-.btn:hover{
-  border: 0.5px solid rgb(168, 164, 164);
-  
+#heading{
+  color:rgb(20, 19, 21);
 }
 
-
-
-#para {
-  font-size: small;
-  margin-top: 30px;
-}
-
-#lang {
-  text-decoration: none;
+#para{
+  font-weight:blod;
+  color:white;
+  background-color: black;
 }
