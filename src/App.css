@@ -1,12 +1,12 @@
 .box {
-  border: 2px solid black;
+  border: 0px solid black;
   display: flex;
   flex-direction: column;
-  
+  border-radius: 15px;
   width: fit-content;
   margin: 150px auto;
   padding: 30px;
-  
+  background-color: rgb(11, 53, 237);
 }
 
 .smallBox{
@@ -14,6 +14,7 @@
   width: 250px;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 #gneder{
@@ -21,8 +22,8 @@
 }
 
 #btn{
-  color:white;
-  background-color: rgb(52, 161, 228);
+  color:rgb(14, 13, 13);
+  background-color: rgb(85, 236, 120);
   font-weight: bold;
   width: 150px;
   height: 30px;
@@ -32,7 +33,8 @@
 }
 
 #btn:hover{
-  background-color: darkblue;
+  background-color: rgb(216, 214, 79);
+  color: rgb(15, 12, 12);
 }
 
 #checkBox{
@@ -41,6 +43,35 @@
 
 
 #uploadPreview{
-   width: 50px;
-   height: 50px;
+   width: 150px;
+   height: 150px;
+   border: 1px solid black;
+   border-radius: 150px;
+}
+
+#imgBox{
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inputs{
+  border: 0.4px solid white;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.atr{
+  color:white;
+  font-weight: bold;
+}
+.gen{
+  color: black;
+  background-color: white;
+}
+
+#profile{
+   margin-bottom:10px ;
 }
