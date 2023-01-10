@@ -1,16 +1,14 @@
 body {
-  padding: 1px;
-  margin: 0px;
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image:url(../public/loginBc.png);
-  background-repeat: no-repeat;
-  background-size: 50% 100vh; */
-
- }
+  background-image: url(https://i.pinimg.com/originals/35/7c/29/357c293246483c5fc972682f6af35427.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
