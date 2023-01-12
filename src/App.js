@@ -1,59 +1,58 @@
-import React, {useState} from 'react';
-import "./App.css"
-
+import React, { useState } from 'react';
+import axios from "axios"
+import './App.css';
 
 function App() {
-  const [result, setResult] = useState("")
-  const [name, setName] = useState("")
-  const [loverName, setLoverName] = useState("")
-  const [active, setActive] = useState(false)
+  const [url, setUrl] = useState("")
+  const [urlShort, setUrlShort] = useState("")
+  const [check, setCheck] = useState(false)
 
-  const run = () => {
+  const shotUrl = (e) => {
+    e.preventDefault();
+    let data = {}
+    if (!url) { alert("Enter long URL") }
+    else {
+      data.longUrl = url
 
-    if (!active) {
-      if (name === "") {
-        alert("Please Enter Your Name");
-      }
-      else if (loverName === "") {
-        alert("Please Enter Your Love Name");
-      }
-      else if (name.length < 3) {
-        alert("Please Enter minimum 3 charactor of Name");
-      }
-      else if (loverName.length < 3) {
-        alert("Please Enter minimum 3 charactor of Your Love Name");
-      }
-      else {
-        let number = Math.random() * 100;
-        number = Math.round(number);
-        setResult(number + "%")
-        setActive(true)
-      }
-      
-    } else {
-      setActive(false)
-      setLoverName("")
-      setName("")
-      setResult("")
+      axios.post("http://localhost:3001/url/shorten", data)
+        .then((responce) => {
+          console.log(responce.data.data.shortUrl)
+          setUrlShort(responce.data.data.shortUrl)
+          setCheck(true)
+        }).catch((err) => alert(err.message))
     }
-
-
   }
+
+  const copyText = () => {
+    let copyData = document.getElementById("shortUrl");
+    copyData.select();
+    navigator.clipboard.writeText(copyData.value);
+  }
+
+  const clearAll = () => {
+    setUrl("")
+    setUrlShort("")
+    setCheck(false)
+  }
+
   return (
     <>
       <div className="box">
-        <div className="heading">Love Calculator</div>
-        <div id="fill">
-          <input type="text" placeholder="Your Name" className="inputx" value={name} onChange={(e) => setName(e.target.value)} />💖
-          <input type="text" placeholder="Lover Name" className="inputx" value={loverName} onChange={(e) => setLoverName(e.target.value)} />
+        <span id='urlHeading'>URL Shortner</span>
+        <div id='smallBox'>
+          <input id='longUrl' className="form-control" type="text" placeholder="Enter your long URL" required value={url} onChange={(e) => setUrl(e.target.value)} />
+          <button type="button" id='btn' className="btn btn-success" onClick={shotUrl} >ShortURL</button>
         </div>
-        <input type="submit" onClick={run} value={(active) ? "Clear" : "Click"} id="btn" />
-        <br />
-        <input type="text" placeholder="Love Percentage" className="inputx" value={result} />
-        <p className="heading">God bless your Relationship</p>
+
+        <div id='smallBox'>
+          <input id='shortUrl' className="form-control" type="text" required value={urlShort} onChange={(e) => setUrlShort(e.target.value)} />
+          {(check) ? <button type="button" id='btnCopy' className="btn btn-success" onClick={copyText} >Copy</button> : ""}
+          {(check) ? <button type="button" id='btn' className="btn btn-success" onClick={clearAll} >Clear</button> : ""}
+        </div>
+
       </div>
     </>
-  )
+  );
 }
 
 export default App;
