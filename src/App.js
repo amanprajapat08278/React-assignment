@@ -1,53 +1,30 @@
-import React, { useState } from 'react';
-import axios from "axios"
-import './App.css';
+import React, {useState} from 'react';
+import Topbar from './components/topbar/Topbar';
+import Contact from './components/contact/Contact';
+import Intro from './components/intro/Intro';
+import Portfolio from './components/portfolio/Portfolio';
+import Testimonials from './components/testimonials/Testimonials';
+import Works from './components/works/Works';
+import Menu from './components/menu/Menu';
+import "./App.css"
+
+
 
 function App() {
-  const [url, setUrl] = useState("")
-  const [urlShort, setUrlShort] = useState("")
-  const [check, setCheck] = useState(false)
-
-  const shotUrl = (e) => {
-    e.preventDefault();
-    let data = {}
-    if (!url) { alert("Enter long URL") }
-    else {
-      data.longUrl = url
-
-      axios.post("http://localhost:3001/url/shorten", data)
-        .then((responce) => {
-          console.log(responce.data.data.shortUrl)
-          setUrlShort(responce.data.data.shortUrl)
-          setCheck(true)
-        }).catch((err) => alert(err.message))
-    }
-  }
-
-  const copyText = () => {
-    let copyData = document.getElementById("shortUrl");
-    copyData.select();
-    navigator.clipboard.writeText(copyData.value);
-  }
-
-  const clearAll = () => {
-    setUrl("")
-    setUrlShort("")
-    setCheck(false)
-  }
-
+  let [menuBtn, setMenuBtn] = useState(false)
+  
+  
   return (
     <>
-      <div className="box">
-        <span id='urlHeading'>URL Shortner</span>
-        <div id='smallBox'>
-          <input id='longUrl' className="form-control" type="text" placeholder="Enter your long URL" required value={url} onChange={(e) => setUrl(e.target.value)} />
-          <button type="button" id='btn' className="btn btn-success" onClick={shotUrl} >ShortURL</button>
-        </div>
-
-        <div id='smallBox'>
-          <input id='shortUrl' className="form-control" type="text" required value={urlShort} onChange={(e) => setUrlShort(e.target.value)} />
-          {(check) ? <button type="button" id='btnCopy' className="btn btn-success" onClick={copyText} >Copy</button> : ""}
-          {(check) ? <button type="button" id='btn' className="btn btn-success" onClick={clearAll} >Clear</button> : ""}
+      <div className='app'>
+        <Topbar menuBtn={menuBtn} setMenuBtn={setMenuBtn}/>
+        <Menu menuBtn={menuBtn} setMenuBtn={setMenuBtn}/>
+        <div className="sections">
+          <Intro />
+          <Portfolio />
+          <Works />
+          <Testimonials />
+          <Contact />
         </div>
 
       </div>

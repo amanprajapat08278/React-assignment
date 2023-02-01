@@ -5,13 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image:url(../public/image3.jpg);
+  /* background-image:url(../public/image3.jpg);
   background-repeat: no-repeat;
-  background-size:100% 100vh;
+  background-size:100% 100vh; */
 
  }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Roboto', sans-serif;
 }
