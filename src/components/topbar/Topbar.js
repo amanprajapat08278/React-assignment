@@ -9,7 +9,7 @@ function Topbar({menuBtn, setMenuBtn}) {
     <div className='topbar' id='topbar' style={(!menuBtn)?{backgroundColor:"white"}:{backgroundColor:"royalblue", color:"white"}}>
       <div className="wrapper">
         <div className="left">
-          <a href='#intro' className='logo'>LOGOOOO</a>
+          <a href='#intro' className='logo'>Portfolio</a>
 
           <div className="itemContainer">
           <i  className="fa-solid fa-user"></i><span className='btnIcon'>8278615141</span>

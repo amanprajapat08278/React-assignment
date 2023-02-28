@@ -4,7 +4,7 @@ import "./Testimonials.css"
 function Testimonials() {
   return (
     <div className='testimonials' id='testimonials'>
-       I am Contact Page
+      <h1>Tehndhdshhpdf</h1>
     </div>
   )
 }

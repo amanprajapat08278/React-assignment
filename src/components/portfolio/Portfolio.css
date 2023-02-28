@@ -1,3 +1,26 @@
-.portfolio{
-  background-color: lightseagreen;
+#skillsBigBox{
+  background-color: lightblue;
+}
+
+#skillsBox{
+  width: fit-content;
+  height: 15rem;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  border: 1px solid red;
+  margin: 1rem auto;
+}
+
+.skills{
+  padding: 3rem;
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid black;
+  margin-inline: 8rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  font-weight: bold;
 }

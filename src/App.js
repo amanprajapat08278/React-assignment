@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Topbar from './components/topbar/Topbar';
 import Contact from './components/contact/Contact';
 import Intro from './components/intro/Intro';
@@ -12,13 +12,13 @@ import "./App.css"
 
 function App() {
   let [menuBtn, setMenuBtn] = useState(false)
-  
-  
+
+
   return (
     <>
       <div className='app'>
-        <Topbar menuBtn={menuBtn} setMenuBtn={setMenuBtn}/>
-        <Menu menuBtn={menuBtn} setMenuBtn={setMenuBtn}/>
+        <Topbar menuBtn={menuBtn} setMenuBtn={setMenuBtn} />
+        <Menu menuBtn={menuBtn} setMenuBtn={setMenuBtn} />
         <div className="sections">
           <Intro />
           <Portfolio />

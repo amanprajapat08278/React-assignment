@@ -4,18 +4,19 @@
 
 .sections {
    width: 100%;
-   height: calc(100vh - 70px);
-   background-color: lightpink;
+   height: calc(100vh - 50px);
    position: relative;
    top: 70px;
    scroll-behavior: smooth;
    scroll-snap-type: y mandatory;
 }
+
 .sections::-webkit-scrollbar{
    display: none;
 }
+
 .sections>* {
-   height: 33rem;  /* calc(100vh - 50px); */
+   height: calc(100vh - 50px);  /* calc(100vh - 50px); */
    /* border: 2px solid black; */
    /* scroll-snap-align: start; */
    
