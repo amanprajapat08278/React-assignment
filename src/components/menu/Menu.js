@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Menu.css"
 
-function Menu({menuBtn, setMenuBtn}) {
+function Menu({ menuBtn, setMenuBtn }) {
   return (
-    <div className='menu' style={(menuBtn)?{right:"0px"}:{right:"-200px"}}>
+    <div className='menu' style={(menuBtn) ? { right: "0px" } : { right: "-200px" }}>
       <ul>
         <li><a href='#intro'>Home</a></li>
         <li><a href='#skillsBigBox'>Portfolio</a></li>

@@ -13,21 +13,22 @@
     transition: all 1s ease;
 }
 
-.menu  a {
+.menu a {
     text-decoration: none;
     color: white;
 }
 
 .menu ul {
+    list-style: none;
     margin-top: 2rem;
     width: 60%;
 }
 
 .menu li {
+    list-style: none;
     margin-block: 15px;
 }
 
-.menu li:hover{
+.menu li:hover {
     font-weight: bold;
 }
-
