@@ -14,12 +14,12 @@ function App() {
     else {
       data.longUrl = url
 
-      axios.post("http://localhost:3001/url/shorten", data)
+      axios.post("https://iamurlshortener.glitch.me/url/shorten", data)
         .then((responce) => {
           console.log(responce.data.data.shortUrl)
           setUrlShort(responce.data.data.shortUrl)
           setCheck(true)
-        }).catch((err) => alert(err.message))
+        }).catch((err) => {alert(err.response.data.message)})
     }
   }
 
@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <div className="box">
-        <span id='urlHeading'>URL Shortner</span>
+        <span id='urlHeading'>I AM URL SHORTENER</span>
         <div id='smallBox'>
           <input id='longUrl' className="form-control" type="text" placeholder="Enter your long URL" required value={url} onChange={(e) => setUrl(e.target.value)} />
           <button type="button" id='btn' className="btn btn-success" onClick={shotUrl} >ShortURL</button>
