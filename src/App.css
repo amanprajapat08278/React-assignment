@@ -1,11 +1,29 @@
-.App {
+.box1{
+  
+  width: fit-content;
+  margin: 6rem auto;
   text-align: center;
-
-  margin-top: 4rem;
+  
 }
 
-.data{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.btn{
+  padding: 5px 15px 5px 15px;
+  margin-inline: 25px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: rgb(228, 228, 70);
+  border: 1px solid rgb(228, 228, 70);
+  cursor: pointer;
+  color: blue;
+}
+
+.btn:hover{
+  background-color: rgb(133, 211, 16);
+  border: 1px solid red;
+}
+
+#num{
+  font-size: 80px;
+  font-weight: bold;
 }
